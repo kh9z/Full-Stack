@@ -5,7 +5,6 @@ export default async function Page() {
         .then((res) => {
             return res.json()
         });
-    console.log(dataArticles)
     return (
         <>
             <div className='flex flex-col justify-start p-4'>

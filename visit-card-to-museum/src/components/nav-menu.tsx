@@ -37,6 +37,14 @@ export function NavMenu(){
                         Profile security
                     </Link>
                 </li>
+                <li className="basis-1/3 text-center text-lg nav-btn">
+                    <Link
+                        className={`link ${pathname === '/privacy-policy/page.tsx' ? 'text-white' : ''}`}
+                        href="/privacy-policy"
+                    >
+                        privacy-policy
+                    </Link>
+                </li>
             </ul>
         </nav>
     )
