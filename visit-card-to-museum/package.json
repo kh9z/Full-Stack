@@ -34,6 +34,7 @@
     "eslint-config-next": "14.1.0",
     "eslint-plugin-storybook": "^0.8.0",
     "postcss": "^8",
+    "prisma": "^6.10.1",
     "storybook": "^8.1.5",
     "tailwindcss": "^3.4.3",
     "typescript": "^5"
