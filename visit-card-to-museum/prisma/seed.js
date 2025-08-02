@@ -4,11 +4,28 @@ const prisma = new PrismaClient();
 
 async function main() {
   console.log("Start seeding");
-  await prisma.user.create({
+  const user = await prisma.user.create({
     data: {
       email: "admin@example.com",
       name: "Admin User",
     },
+  });
+
+  await prisma.post.createMany({
+    data: [
+      {
+        title: 'First Post',
+        content: 'This is the first post.',
+        published: true,
+        authorId: user.id,
+      },
+      {
+        title: 'Second Post',
+        content: 'This is the second post.',
+        published: false,
+        authorId: user.id,
+      },
+    ],
   });
 
   console.log("Database has been seeded!");

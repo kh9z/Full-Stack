@@ -11,7 +11,9 @@
     "storybook": "storybook dev -p 6006",
     "migrate:dev": "dotenv -e .env.development -- npx prisma migrate dev",
     "seed:dev": "dotenv -e .env.development -- npx ts-node prisma/seed.js",
-    "seed:prod": "dotenv -e .env.production -- npx ts-node prisma/seed.js"
+    "seed:prod": "dotenv -e .env.production -- npx ts-node prisma/seed.js",
+    "prisma-studio:dev": "dotenv -e .env.development -- npx prisma studio",
+    "prisma-studio:prod": "dotenv -e .env.production -- npx prisma studio"
   },
   "dependencies": {
     "@prisma/client": "^6.10.1",
