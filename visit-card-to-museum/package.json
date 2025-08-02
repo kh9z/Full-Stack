@@ -9,9 +9,14 @@
     "start": "next start",
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "migrate:dev": "dotenv -e .env.development -- npx prisma migrate dev",
+    "seed:dev": "dotenv -e .env.development -- npx ts-node prisma/seed.js",
+    "seed:prod": "dotenv -e .env.production -- npx ts-node prisma/seed.js",
+    "prisma-studio:dev": "dotenv -e .env.development -- npx prisma studio",
+    "prisma-studio:prod": "dotenv -e .env.production -- npx prisma studio"
   },
   "dependencies": {
+    "@prisma/client": "^6.10.1",
     "next": "^14.2.3",
     "react": "^18",
     "react-dom": "^18"
@@ -30,12 +35,15 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
+    "dotenv-cli": "^10.0.0",
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
     "eslint-plugin-storybook": "^0.8.0",
     "postcss": "^8",
+    "prisma": "^6.10.1",
     "storybook": "^8.1.5",
     "tailwindcss": "^3.4.3",
+    "tsx": "^4.20.3",
     "typescript": "^5"
   }
 }
