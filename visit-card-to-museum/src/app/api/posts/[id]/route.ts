@@ -5,10 +5,12 @@ const prisma = new PrismaClient();
 
 export async function GET(
   _req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
+  const { id } = await params;
+
   const post = await prisma.post.findUnique({
-    where: { id: params.id },
+    where: { id },
   });
 
   if (!post) {
@@ -20,12 +22,13 @@ export async function GET(
 
 export async function PATCH(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
+  const { id } = await params;
   const data = await req.json();
 
   const post = await prisma.post.update({
-    where: { id: params.id },
+    where: { id },
     data,
   });
 
@@ -34,10 +37,12 @@ export async function PATCH(
 
 export async function DELETE(
   _req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
+  const { id } = await params;
+
   await prisma.post.delete({
-    where: { id: params.id },
+    where: { id },
   });
 
   return NextResponse.json({ message: "Deleted" }, { status: 204 });
