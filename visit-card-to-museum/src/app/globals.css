@@ -2,10 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-.nav-btn{
-    border: 1px solid skyblue;
-    border-radius: 12px;
-    margin: 0px 10px;
-    padding: 4px 0px;
-    background-color: skyblue;
+.nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid skyblue;
+  border-radius: 12px;
+  margin: 0px 10px;
+  padding: 4px 15px;
+  background-color: skyblue;
+  text-wrap: nowrap;
 }
