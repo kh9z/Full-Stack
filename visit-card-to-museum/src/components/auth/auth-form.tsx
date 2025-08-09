@@ -2,6 +2,8 @@
 
 import { FormState } from "@/app/lib/definitions";
 import { useActionState } from "react";
+import GoogleAuthButton from "./google-auth-btn";
+import GithubAuthButton from "./github-auth-btn";
 
 interface Props {
   func: (
@@ -71,13 +73,13 @@ export default function AuthForm({ func, extended = false }: Props) {
           </ul>
         </div>
       )}
-      <button
-        disabled={pending}
-        type="submit"
-        className="basis-1/3 text-center text-lg nav-btn w-full max-w-40 self-center"
-      >
+      <button disabled={pending} type="submit" className="nav-btn self-center">
         Confirm
       </button>
+      <div className="flex gap-4 w-full items-center justify-center">
+        <GoogleAuthButton />
+        <GithubAuthButton />
+      </div>
     </form>
   );
 }

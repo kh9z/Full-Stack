@@ -3,6 +3,7 @@
 import { logout } from "@/app/actions/auth";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import LogoutButton from "./auth/logout-btn";
 
 export function NavMenu() {
   const pathname = usePathname();
@@ -56,7 +57,7 @@ export function NavMenu() {
           </Link>
         </li>
         <li className="basis-1/3 text-center text-lg nav-btn">
-          <button onClick={logout}>Logout</button>
+          <LogoutButton />
         </li>
       </ul>
     </nav>
