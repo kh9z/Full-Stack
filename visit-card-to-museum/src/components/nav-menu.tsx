@@ -1,6 +1,5 @@
 "use client";
 
-import { logout } from "@/app/actions/auth";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import LogoutButton from "./auth/logout-btn";

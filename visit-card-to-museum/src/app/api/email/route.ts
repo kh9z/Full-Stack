@@ -1,10 +1,12 @@
-import { NextResponse } from 'next/server';
+import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
+  try {
     const body = await request.json();
-    try {
-        return NextResponse.json(body);
-    } catch (error) {
-        return NextResponse.json({ error });
-    }
+    return NextResponse.json(body);
+  } catch (error) {
+    return NextResponse.json({
+      error: error instanceof Error ? error.message : error,
+    });
+  }
 }
